@@ -1,0 +1,6 @@
+google-generativeai
+numpy
+streamlit
+textwrap
+doc2text
+pathlib
