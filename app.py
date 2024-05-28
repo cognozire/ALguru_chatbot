@@ -25,7 +25,7 @@ if prompt := st.chat_input("Enter your query"):
     with st.chat_message("user"):
         st.markdown(prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})
-
+    user_query = gemini.generate("If "+prompt+" is related to child personality/child developement/ algooru related question then return the number 0 else return 1")
     if prompt.lower() in ("hi", "hello", "hey"):  # Handle multiple greetings
         response = "How can I help you today?😊"
     elif prompt.lower() in ("what is algooru","what services do you offer?","can you give me an overview of your platform","who do you serve?","what does your platform provide?","what are your services?"):
@@ -52,4 +52,5 @@ if prompt := st.chat_input("Enter your query"):
 
     with st.chat_message("assistant"):
         st.markdown(response)
+        st.write(user_query)
     st.session_state.messages.append({"role": "assistant", "content": response})
