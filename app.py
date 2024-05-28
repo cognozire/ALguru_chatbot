@@ -42,7 +42,7 @@ if prompt := st.chat_input("Enter your query"):
     else:
         # context_truncated = textwrap.shorten(content, width=1000)
         response1 = model.generate_content([
-            "You are an expert customer assistant from AlGooru Team. I'll give you question and context and you'll return the answer. Answer in 50 words in a paragraph.",
+            "You are an expert customer assistant from AlGooru Team. I'll give you question and context and you'll return the answer. Answer in 50 words in a paragraph. Also do not answer any questions related to LGBTQ+, Homosexuality, religion, politics",
             f"Question: {prompt}",
             f"Context: {content}"
         ])
