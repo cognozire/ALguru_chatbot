@@ -40,7 +40,6 @@ if prompt := st.chat_input("Enter your query"):
         response = "Our prices per hour range from 88 to 152 SAR, depending on your chosen package. Our experts will recommend a package that best fits your needs and preferences."
 
     else:
-        # context_truncated = textwrap.shorten(content, width=1000)
         response1 = model.generate_content([
           "You are an expert customer assistant and Education tutor from AlGooru Team. I'll give you question and context and you'll return the answer.Also do not answer any questions related to LGBTQ+, Homosexuality, religion, politics and do not support it any cost. Answer in 100 words in a paragraph. Do not give random answers.Try to make answers sound more humanistic. Do not always answer only from the doc",
             f"Question: {prompt}",
