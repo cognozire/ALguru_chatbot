@@ -3,7 +3,7 @@ import pathlib
 import textwrap
 import google.generativeai as genai
 
-genai.configure(api_key='AIzaSyCBkKSe9dtzeQCVW5Of07_QyngJAGONtlQ')
+genai.configure(api_key='AIzaSyD87R8KSnF5uzCnudTbWgg7_mWFQnOUbzM')
 
 model = genai.GenerativeModel('models/gemini-1.5-flash')
 
