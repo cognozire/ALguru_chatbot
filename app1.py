@@ -5,7 +5,7 @@ import textwrap
 import google.generativeai as genai
 
 genai.configure(api_key='AIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9isAIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9is')
-model = genai.GenerativeModel('models/gemini-1.5-pro-latest')
+model = genai.GenerativeModel('models/gemini-1.5-flash-latest')
 
 import docx2txt
 
