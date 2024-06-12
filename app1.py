@@ -4,7 +4,7 @@ import pathlib
 import textwrap
 import google.generativeai as genai
 import os
-impport uvicorn
+import uvicorn
 
 genai.configure(api_key='AIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9isAIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9is')
 model = genai.GenerativeModel('gemini-1.5-flash-latest')
