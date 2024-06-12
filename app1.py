@@ -3,6 +3,8 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import pathlib
 import textwrap
 import google.generativeai as genai
+import os
+impport uvicorn
 
 genai.configure(api_key='AIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9isAIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9is')
 model = genai.GenerativeModel('gemini-1.5-flash-latest')
@@ -86,6 +88,9 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 if __name__ == '__main__':
     print('Starting bot ...')
     app = Application.builder().token(TOKEN).build()
+    HOST = os.getenv("HOST","0.0.0.0")
+    PORT = os.getenv("PORT",8080)
+    uvicorn.run(app,host=HOST,port = PORT)
 
     # Register command handlers
     app.add_handler(CommandHandler('start', start_command))
