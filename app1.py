@@ -88,9 +88,9 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 if __name__ == '__main__':
     print('Starting bot ...')
     app = Application.builder().token(TOKEN).build()
-    HOST = os.getenv("HOST","0.0.0.0")
-    PORT = os.getenv("PORT",8080)
-    uvicorn.run(app,host=HOST,port = PORT)
+    # HOST = os.getenv("HOST","0.0.0.0")
+    # PORT = os.getenv("PORT",8080)
+    # uvicorn.run(app,host=HOST,port = PORT)
 
     # Register command handlers
     app.add_handler(CommandHandler('start', start_command))
