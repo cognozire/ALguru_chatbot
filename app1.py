@@ -32,7 +32,7 @@ async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def handle_response(prompt:str) ->str:
     processed: str = prompt.lower()
     if prompt.lower() in ("hi", "hello", "hey"):  # Handle multiple greetings
-        response = "How can I help you today?😊"
+        response = "How can I help you today? 😊"
     elif prompt.lower() in ("what is algooru","what services do you offer?","can you give me an overview of your platform","who do you serve?","what does your platform provide?","what are your services?"):
         response = "AlGooru is an educational platform that connects parents and students with qualified and vetted tutors, offering in-person and online sessions in 20 core subjects that cover all educational levels, along with some university and professional fields."
     elif prompt.lower() in ("where is alguru located","where is your headquarters?","where is your location?","where is your company?","where do you conduct sessions?","what are your services?"):
@@ -45,7 +45,9 @@ def handle_response(prompt:str) ->str:
         response = "Our prices per hour range from 88 to 152 SAR, depending on your chosen package. Our experts will recommend a package that best fits your needs and preferences."
 
     else:
+        response = "going in else"
         flag = model.generate_content(["If "+prompt+" is related to anything like LGBTQ+, mention of homosexuality, politics, war news, crimes, etc. return '1' else return '0'"])
+        response = flag
         # st.write(flag.text)
         if '1' in str(flag.text):
             response = "I am a parenting and educational assistance bot. I am unable to answer these questions. Please ask questions related to educational assistance."
