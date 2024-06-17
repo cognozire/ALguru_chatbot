@@ -6,7 +6,7 @@ import google.generativeai as genai
 import os
 import uvicorn
 
-genai.configure(api_key='AIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9isAIzaSyDR5LnttOKA1QZWckv8gxrm8FRwOtkj9is')
+genai.configure(api_key='AIzaSyCopA9T6rbUQL15WOijohtWEWo7TjQxq-s')
 model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 import docx2txt
