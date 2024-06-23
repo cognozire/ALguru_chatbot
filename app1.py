@@ -49,16 +49,16 @@ def handle_response(prompt:str) ->str:
         flag = model.generate_content(["If "+prompt+" has specific mention of anything like LGBTQ+, homosexuality, politics, war news, crimes. return '1' else if it's related to child development or parenting or children's needs etc. or anything other than this realted to child, then return '0'"])
         if '1' in str(flag.text):
             response = "I am a parenting and educational assistance bot. I am unable to answer these questions. Please ask questions related to educational assistance."
-        elif '0' in str(flag.text):            
-        # context_truncated = textwrap.shorten(content, width=1000)
-            response1 = model.generate_content([
-                "You are an expert customer assistant from AlGooru Team. I'll give you question and context and you'll return the answer.Answer in 60 words in a paragraph. Do not give random answers. ",
-                f"Question: {prompt}",
-                f"Context: {content}"
-            ])
-            response = f"{response1.text}"
+        # elif '0' in str(flag.text):            
+        # # context_truncated = textwrap.shorten(content, width=1000)
+        #     response1 = model.generate_content([
+        #         "You are an expert customer assistant from AlGooru Team. I'll give you question and context and you'll return the answer.Answer in 60 words in a paragraph. Do not give random answers. ",
+        #         f"Question: {prompt}",
+        #         f"Context: {content}"
+        #     ])
+        #     response = f"{response1.text}"
         else:
-            response = model.generate_content([
+            response1 = model.generate_content([
                 "You are an expert customer assistant from AlGooru Team. I'll give you question and context and you'll return the answer.Answer in 60 words in a paragraph. Do not give random answers. ",
                 f"Question: {prompt}",
                 f"Context: {content}"
