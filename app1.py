@@ -45,7 +45,7 @@ def handle_response(prompt:str) ->str:
         response = "Our prices per hour range from 88 to 152 SAR, depending on your chosen package. Our experts will recommend a package that best fits your needs and preferences."
 
     else:
-        flag = model.generate_content(["If "+prompt+" is related to anything like LGBTQ+, mention of homosexuality, politics, war news, crimes. return '1' else return '0'"])
+        flag = model.generate_content(["If "+prompt+" is related to anything like LGBTQ+, mention of homosexuality, politics, war news, crimes. return '1' else if it's related to child development or parenting or children's needs, etc. return '0'"])
         # st.write(flag.text)
         if '1' in str(flag.text):
             response = "I am a parenting and educational assistance bot. I am unable to answer these questions. Please ask questions related to educational assistance."
