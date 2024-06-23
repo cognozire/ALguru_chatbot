@@ -47,7 +47,6 @@ def handle_response(prompt:str) ->str:
     else:
         # if it's related to child development or parenting or children's needs, etc.
         flag = model.generate_content(["If "+prompt+" is related to anything like LGBTQ+, mention of homosexuality, politics, war news, crimes. return '1' else return '0'"])
-        print(flag)
         if '1' in str(flag.text):
             response = "I am a parenting and educational assistance bot. I am unable to answer these questions. Please ask questions related to educational assistance."
         elif '0' in str(flag.text):            
@@ -60,7 +59,7 @@ def handle_response(prompt:str) ->str:
             response = f"{response1.text}"
         else:
             response = "I'm sorry, can you please try rephrasing your question?"
-    return response
+    return flag, response
 
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -76,7 +75,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #     else:
     #         return
     # else:
-    response:str=handle_response(text)
+    #  response:str
+    flag, response=handle_response(text)
+    print(flag)
     print('BOT:',response)
     await update.message.reply_text(response)
 
