@@ -58,7 +58,7 @@ def handle_response(prompt:str) ->str:
             ])
             response = f"{response1.text}"
         else:
-            response = "model.generate_content([
+            response = model.generate_content([
                 "You are an expert customer assistant from AlGooru Team. I'll give you question and context and you'll return the answer.Answer in 60 words in a paragraph. Do not give random answers. ",
                 f"Question: {prompt}",
                 f"Context: {content}"
