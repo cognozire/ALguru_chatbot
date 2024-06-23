@@ -46,7 +46,7 @@ def handle_response(prompt:str) ->str:
 
     else:
         # if it's related to child development or parenting or children's needs, etc.
-        flag = model.generate_content(["If "+prompt+" is related to anything like LGBTQ+, mention of homosexuality, politics, war news, crimes. return '1' else if it's related to child development or parenting or children's needs etc. or anything other than this then return '0'"])
+        flag = model.generate_content(["If "+prompt+" has specific mention of anything like LGBTQ+, homosexuality, politics, war news, crimes. return '1' else if it's related to child development or parenting or children's needs etc. or anything other than this realted to child, then return '0'"])
         if '1' in str(flag.text):
             response = "I am a parenting and educational assistance bot. I am unable to answer these questions. Please ask questions related to educational assistance."
         elif '0' in str(flag.text):            
