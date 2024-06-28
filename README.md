@@ -15,5 +15,5 @@ Besides this we have keep in mind about the safety and security of children by m
 
 ** Bot Id**: @algooruBot
 
-Example Use:
+Example Use:<br>
 ![image](https://github.com/cognozire/ALguru_chatbot/assets/114404980/e53df2ac-4062-4fb1-bf0a-1829e68d4c48)
