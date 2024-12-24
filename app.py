@@ -2,8 +2,14 @@ import streamlit as st
 import pathlib
 import textwrap
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
 
-genai.configure(api_key='AIzaSyAytkzRS0Xp0pCyo6WqKJ4m1o330bF-gPk')
+load_dotenv()
+
+MY_ENV_VAR = os.getenv('GOOGLE_API_KEY')
+GOOGLE_API = os.getenv(GOOGLE_API_KEY
+genai.configure(api_key=MY_ENV_VAR)
 
 model = genai.GenerativeModel('models/gemini-1.5-flash')
 
